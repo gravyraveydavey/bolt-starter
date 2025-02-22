@@ -49,3 +49,4 @@ General Coding:
 - Follow proper import practices:
   - Use @/ path aliases
   - Keep component imports organized
+- Never replace file contents with '{/* Rest of the component remains the same */}' comments, only update the lines of the file that are changing
