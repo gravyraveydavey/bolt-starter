@@ -1,10 +1,10 @@
-import { SignUpForm } from '@/components/sign-up-form'
+import { SignInSignUpForm } from '@/components/sign-in-sign-up-form'
 
 export default function Page() {
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm">
-        <SignUpForm />
+        <SignInSignUpForm initialTab="sign-up" />
       </div>
     </div>
   )
