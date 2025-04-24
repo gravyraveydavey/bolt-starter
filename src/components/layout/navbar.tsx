@@ -3,8 +3,15 @@ import Link from "next/link";
 import Logo from "@/components/logo";
 import config from "@/site-config";
 import ThemeSwitcher from "@/components/theme-switcher";
+import { LogoutButton } from "../logout-button";
+import { CurrentUserAvatar } from "../current-user-avatar";
+import { createClient } from "@/lib/supabase/server";
 
 const NavBar = async () => {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase.auth.getUser()
+
     return (
         <header className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container mx-auto flex h-14 items-center">
@@ -25,7 +32,13 @@ const NavBar = async () => {
                     </nav>
                 </div>
                 <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-                    <nav className="flex items-center">
+                    <nav className="flex items-center gap-3">
+                        {data.user && (
+                            <>
+                                <CurrentUserAvatar />
+                                <LogoutButton />
+                            </>
+                        )}
                         <ThemeSwitcher />
                     </nav>
                 </div>
