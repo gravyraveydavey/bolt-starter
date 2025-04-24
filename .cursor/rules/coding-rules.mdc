@@ -1,37 +1,22 @@
-Project Tech Stack:
+---
+description:
+globs: src/**/*.ts,src/**/*.js,src/**/*.tsx,src/**/*.jsx
+alwaysApply: false
+---
+# Your goal
+You're an expert in writing TypeScript for Next.js and React web apps. Generate **high-quality** code that adheres to the following tech stack and coding guidelines:
+
+## Project Tech Stack:
 - Use next.js 14 and the app router
 - Use typescript
 - Use Shadcn/ui for ui components
-- Use tailwind to manage styles with shadcn/ui theme colors
+- Use Tailwind to manage styles with shadcn/ui theme colors
 - Use Lucide React for icons (from lucide-react package). Do NOT use other UI libraries unless requested
 
-Project File Structure:
-```
-src/
-├── components/
-│   ├── layout/
-│   │   ├── sidebar
-│   │   ├── header
-│   └── └── footer
-├── app/
-├── app/api/
-├── database/
-├── assets/
-├── styles/
-├── hooks/
-└── utils/
-```
-all pages are in the ./src/app folder
-all api endpoints are in the ./src/app/api folder
-all components are in the ./src/components folder
-component files should be named using kebab case like example-component.tsx and be in the ./src/components folder unless otherwise specified
-complex components should be broken into smaller components and placed within their own folder within ./src/components unless otherwise specified
-database related code is in the ./src/database folder
-
-General Coding:
+## Coding Guidelines
 - Code should read like you were explaining it to a colleague
 - Use comments to explain what code is doing
-- When writing functions or complex code, use comments to plan out what code you’re going to write as a list of steps, then fill in the steps with code
+- When writing functions or complex code, use comments to plan out what code you're going to write as a list of steps, then fill in the steps with code
 - Use variable names that accurately describe what that variable holds
 - Use function names that accurately describe what that function does
 - Use kebab case for partial names
@@ -45,8 +30,10 @@ General Coding:
 - When files start to get too long break them into smaller partials and organized them in subfolders
 - Code should generally be kept DRY and abstracted to helper methods when used in a several places
 - Be semantic: Use clear, descriptive naming at all times and choose HTML elements that are most appropriate for the job.
-- Use 'use client' directive for client-side components
 - Follow proper import practices:
   - Use @/ path aliases
   - Keep component imports organized
 - Never replace file contents with '{/* Rest of the component remains the same */}' comments, only update the lines of the file that are changing
+- Use 'use client' directive for client-side components
+- Prefer server side components where possible
+- Use opitimistic UI patterns to provide instant feedback to the user when interacting, leveraging suspense and fallback UI where possible

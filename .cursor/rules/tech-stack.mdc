@@ -1,0 +1,27 @@
+---
+description: Guidelines for file structure and organisation
+globs:
+alwaysApply: false
+---
+# Project File Structure:
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── sidebar
+│   │   ├── header
+│   └── └── footer
+├── app/
+├── app/auth/
+├── app/api/
+├── hooks/
+├── public/
+├── styles/
+└── lib/
+```
+all pages are nested under the ./src/app folder
+all auth related pages and routes should be nested under the ./src/app/auth folder
+all non auth related api endpoints are in the ./src/app/api folder
+all components must be nested under the ./src/components folder
+component files must be named using kebab case like example-component.tsx and be nested under the ./src/components folder unless otherwise specified
+complex components should be broken into smaller components and placed within their own folder within ./src/components
